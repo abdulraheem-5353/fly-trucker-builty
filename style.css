@@ -1,0 +1,401 @@
+body {
+  font-family: "Noto Nastaliq Urdu Draft", Tahoma, Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-card {
+  background: #fff;
+  padding: 24px;
+  max-width: 500px;
+  margin: 40px auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.profile-card h2 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.profile-card h3 {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.profile-card h3 span {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  border: 1px solid #333;
+  padding: 18px 16px 32px 16px;
+  background: #fff;
+  direction: rtl;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse; /* Yeh line add karein */
+}
+
+.logo-col {
+  flex: 1 1 34%;
+}
+.logo-div {
+  justify-content: center;
+}
+
+.logo-img {
+  max-width: 300px;
+  max-width: 350px;
+  margin-bottom: 9px;
+}
+
+.offices {
+  margin-bottom: 2px;
+}
+
+.center-head {
+  flex: 1 1 26%;
+  text-align: center;
+  min-width: 210px;
+  margin-top: 215px;
+  margin-left: 30px;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 28px;
+  margin: 12px 0 2px 0;
+}
+
+.slogan {
+  color: #e06b08;
+  font-weight: 600;
+}
+
+.contact-details {
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.contact-details i {
+  margin-right: 5px;
+  color: #333;
+}
+
+.form-fields {
+  flex: 1 1 40%;
+  font-size: 15px;
+}
+
+.form-fields label {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.form-fields input {
+  margin-bottom: 6px;
+  width: 150px;
+  font-size: 14px;
+}
+.form-input {
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  padding: 4px 8px;
+  background-color: transparent; /* agar background transparent rakhna ho */
+  direction: rtl; /* Urdu text ke liye right-to-left direction */
+}
+
+.goods-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.goods-table th,
+.goods-table td {
+  border: 1px solid #222;
+  padding: 6px 3px;
+  text-align: center;
+}
+
+.goods-table th {
+  background: #f4f4f4;
+  font-weight: 700;
+}
+
+.goods-table input {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 25px;
+  direction: rtl;
+  outline: none;
+  height: 350px;
+}
+
+.Total {
+  width: 8%;
+}
+
+.detail-goods {
+  width: 25%;
+}
+
+.th-width {
+  width: 15%;
+  gap: 3px;
+}
+
+.add-row-btn,
+.download-btn {
+  margin-top: 8px;
+  background: #e06b08;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.remove-btn {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.footer-fields {
+  display: flex;
+  gap: 16px;
+  font-size: 15px;
+  margin-top: 25px;
+}
+
+.footer-fields label {
+  margin-left: 5px;
+}
+
+.note-block {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.note-urdu {
+  color: red;
+  font-weight: bold;
+}
+
+.footer-div {
+  margin-top: 15px;
+  border-top: 1px solid #333;
+  padding-top: 7px;
+  font-size: 13px;
+}
+
+.text-div {
+  background: rgba(255, 255, 255, 0.8); /* Slight glass effect */
+  backdrop-filter: blur(6px);
+  padding: 16px 24px;
+  border-radius: 12px;
+  max-width: fit-content;
+  margin: 30px auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.text-div h2 {
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile Responsive Code*/
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+    background: #fff;
+  }
+
+  .container {
+    padding: 12px 10px;
+    margin: 10px;
+    box-shadow: none;
+    border: none;
+  }
+
+  .header-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .logo-col,
+  .center-head,
+  .form-fields {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .logo-img {
+    max-width: 200px;
+    height: auto;
+    margin: 10px auto;
+  }
+
+  .offices {
+    font-size: 16px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  .center-head {
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 10px;
+  }
+
+  .contact-details {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .form-fields {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .form-fields label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  .form-fields input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+  }
+
+  .form-input {
+    border-bottom: 1px solid #999;
+    border-radius: 0;
+  }
+
+  .goods-table {
+    font-size: 15px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .goods-table th,
+  .goods-table td {
+    padding: 6px 5px;
+    font-size: 14px;
+  }
+
+  .goods-table input {
+    height: 160px;
+    font-size: 16px;
+  }
+
+  .footer-fields {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .footer-fields label {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+
+  .add-row-btn,
+  .download-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+
+  .text-div {
+    padding: 16px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .text-div h2 {
+    font-size: 18px;
+  }
+
+  .note-block {
+    font-size: 15px;
+  }
+
+  .footer-div {
+    font-size: 13px;
+    margin-top: 20px;
+    border-top: 1px dashed #aaa;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .buttons-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-flex,
+  .footer-fields {
+    flex-direction: column;
+  }
+
+  .form-fields input {
+    width: 85%;
+  }
+}
+
+::placeholder {
+  color: #bbb;
+  font-size: 13px;
+  opacity: 1;
+}
+
+.buttons-area {
+  margin-top: 20px;
+}
