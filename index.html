@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>FLY TRUCKERS Form</title>
+  <title>FLY TRUCKERS Builty</title>
   <link href="https://fonts.googleapis.com/earlyaccess/notonastaliqurdudraft.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
@@ -94,12 +94,20 @@
     </div>
     <!-- FOOTER -->
     <div class="footer-fields">
-      <div><label> ڈیلیوری: <input name="deliveryNote" id="deliveryNote"></label></div>
-      <div><label> نوٹ: خالئ کنٹئنر <input name="deliveryNote" id="deliveryNote"></label></div>
-      <div><label>دن کے اندر واپسئ: <input name="remarks" id="remarks"></label> <span>اُترے گا</span></div> <br> <br>
-      <div><label>نام وصول کنندہ/فون نمبر: <input name="receiverSignature" id="receiverSignature"></label></div>
-      <div><label>دستخط/آفسر: <input name="officerSignature" id="officerSignature"></label></div>
+      <div class="top-row">
+        <div><label> ڈیلیوری: <input style="max-width: 100%;" name="deliveryNote" id="deliveryNote"></label></div>
+        <div><label> نوٹ: خالئ کنٹئنر <input name="deliveryNote" id="deliveryNote2"></label></div>
+        <div><label> دن کے اندر واپسئ: <input name="remarks" id="remarks"></label> <span>اُترے گا</span></div>
+      </div>
+
+      <!-- 👇 Grouped both bottom-row items into a single container -->
+      <div class="bottom-fields-column">
+        <div><label> نام وصول کنندہ/فون نمبر: <input name="receiverSignature" id="receiverSignature"></label></div>
+        <div><label> دستخط/آفسر: <input name="officerSignature" id="officerSignature"></label></div>
+      </div>
     </div>
+
+
     <div class="note-block">
       <b>نوٹ:</b>
       <span class="note-urdu">

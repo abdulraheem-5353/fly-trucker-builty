@@ -186,6 +186,48 @@ body {
 
 .footer-fields {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 👇 This will make bottom fields appear one below another */
+.bottom-fields-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end; /* Align to left side */
+}
+
+.footer-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top-row,
+.bottom-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap; /* Mobile friendly */
+}
+
+.bottom-row {
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.bottom-row-1 {
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.footer-fields {
+  display: flex;
   gap: 16px;
   font-size: 15px;
   margin-top: 25px;
