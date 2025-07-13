@@ -197,7 +197,7 @@ body {
 
 .note-block {
   margin-top: 15px;
-  font-size: 16px;
+  font-size: 8px;
 }
 
 .note-urdu {
@@ -209,7 +209,7 @@ body {
   margin-top: 15px;
   border-top: 1px solid #333;
   padding-top: 7px;
-  font-size: 13px;
+  font-size: 8px;
 }
 
 .text-div {
@@ -352,15 +352,15 @@ body {
     padding: 16px;
     border-radius: 10px;
     text-align: center;
-    font-size: 15px;
+    font-size: 10px;
   }
 
   .text-div h2 {
-    font-size: 18px;
+    font-size: 5px;
   }
 
   .note-block {
-    font-size: 15px;
+    font-size: 8px;
   }
 
   .footer-div {
