@@ -239,12 +239,13 @@ body {
 
 .note-block {
   margin-top: 15px;
-  font-size: 8px;
+  font-size: 13px;
 }
 
 .note-urdu {
   color: red;
   font-weight: bold;
+  font-size: 13px;
 }
 
 .footer-div {
@@ -275,7 +276,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Mobile Responsive Code*/
+/*Mobile Responsive Code*/
 @media (max-width: 768px) {
   body {
     font-size: 15px;
@@ -402,11 +403,11 @@ body {
   }
 
   .note-block {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .footer-div {
-    font-size: 13px;
+    font-size: 8px;
     margin-top: 20px;
     border-top: 1px dashed #aaa;
     padding-top: 10px;
