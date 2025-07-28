@@ -11,18 +11,36 @@ function buildRow(row, idx) {
         <td><input name="totalFare" value="${row.totalFare}" oninput="tableChange(${idx}, 'totalFare', this.value)" /></td>
         <td><input name="advanceFare" value="${row.advanceFare}" oninput="tableChange(${idx}, 'advanceFare', this.value)" /></td>
         <td><input name="balanceFare" value="${row.balanceFare}" oninput="tableChange(${idx}, 'balanceFare', this.value)" /></td>
-        <td><input name="paidTo" value="${row.paidTo}" oninput="tableChange(${idx}, 'paidTo', this.value)" /></td>
-        <td><button class="remove-btn" onclick="removeRow(${idx})">✖</button></td>
+        
+        
       </tr>
     `;
 }
+function generateSimpleBuiltyNumber() {
+  // Get the previous bilty number from localStorage
+  let count = localStorage.getItem("simpleBuiltyCount");
+
+  // If it doesn't exist, start from 1
+  count = count ? parseInt(count) + 1 : 1;
+
+  // Save the new count back to localStorage
+  localStorage.setItem("simpleBuiltyCount", count);
+
+  // Set the generated number in the input field
+  document.getElementById("billNo").value = count;
+}
+
+// Call function when page loads
+window.onload = function () {
+  generateSimpleBuiltyNumber();
+};
 // Table state
 let tableRows = [newRowData()];
 function renderTable() {
   document.getElementById("goods-table-body").innerHTML =
     tableRows.map((row, idx) => buildRow(row, idx)).join('');
 }
-// Handlers
+/* Handlers
 function addRow() {
   tableRows.push(newRowData());
   renderTable();
@@ -31,7 +49,7 @@ function removeRow(idx) {
   tableRows.splice(idx, 1);
   if (tableRows.length === 0) tableRows.push(newRowData());
   renderTable();
-}
+}*/
 function tableChange(idx, field, value) {
   tableRows[idx][field] = value;
 }
@@ -122,14 +140,5 @@ function downloadImage() {
     });
 }
 
-function addRow() {
-  const tbody = document.getElementById("goods-table-body");
-  const row = document.createElement("tr");
-  for (let i = 0; i < 6; i++) {
-    const td = document.createElement("td");
-    td.innerHTML = '<input type="text" style="width:100%">';
-    row.appendChild(td);
-  }
-  tbody.appendChild(row);
-}
+
 
