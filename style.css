@@ -35,7 +35,7 @@ body {
 
 .container {
   max-width: 1100px;
-  max-height: 1400px;
+  height: auto;
   margin: 30px auto;
   border: 1px solid #333;
   padding: 18px 16px 32px 16px;
@@ -52,34 +52,42 @@ body {
 .logo-col {
   flex: 1 1 70%;
 }
-.logo-div {
+/*.logo-div {
   display: flex;
-  justify-content: flex-end; /* left side */
+  justify-content: flex-end; /* left side 
   align-items: center;
   margin-left: 150px;
   margin-top: 120px;
-  /*padding: 10px 20px; /* optional padding */
-}
+  /*padding: 10px 20px; /* optional padding 
+}*/
 
+.logo {
+  max-width: 350px;
+  margin-left: 50px;
+}
 .logo-img {
   max-width: 350px; /* control size */
   height: auto;
+  margin-left: 50px;
 }
 
 .offices {
   margin-bottom: 2px;
   font-size: 13px;
+  margin-left: 30px;
 }
 
 .address {
   font-size: 11px;
+  margin-left: 50px;
+  padding-left: 80px;
 }
 
 .center-head {
   flex: 1 1 26%;
   text-align: center;
   min-width: 210px;
-  margin-top: 15px;
+  margin-top: 205px;
   margin-left: 50px;
   font-size: 13px;
   font-weight: 600;
