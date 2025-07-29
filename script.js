@@ -87,11 +87,12 @@ function replaceInputsWithText() {
     span.textContent = value;
     span.className = 'input-as-text';
 
-    // Set explicit styles to match input appearance
+    // Set explicit styles to match input appearance 
     span.style.cssText = `
-      border-bottom: 1px solid black;
+      
       padding: 4px 8px;
       display: inline-block;
+      border-bottom: 1px solid black;
       min-width: ${inp.offsetWidth}px;
       font-size: ${window.getComputedStyle(inp).fontSize};
       font-family: ${window.getComputedStyle(inp).fontFamily};
