@@ -164,7 +164,7 @@ function submitToBackend() {
     goods: tableRows // tableRows already managed in your JS
   };
 
-  fetch("https://your-backend-url.up.railway.app/api/builty", {
+  fetch("https://fly-trucker-builty.cyclic.app/api/builty", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
