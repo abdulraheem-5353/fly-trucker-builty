@@ -164,7 +164,7 @@ function submitToBackend() {
     goods: tableRows // tableRows already managed in your JS
   };
 
-  fetch("http://localhost:5000/api/builty", {
+  fetch("https://your-backend-url.up.railway.app/api/builty", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
