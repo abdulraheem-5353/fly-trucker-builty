@@ -141,5 +141,140 @@ function downloadImage() {
     });
 }
 
+//Data store in backend
+
+function submitToBackend() {
+  // Gather data from form
+  const data = {
+    billNo: document.getElementById("billNo").value,
+    date: document.getElementById("date").value,
+    invNo: document.getElementById("invNo").value,
+    from: document.getElementById("from").value,
+    to: document.getElementById("to").value,
+    payable: document.getElementById("payable").value,
+    receiver: document.getElementById("receiver").value,
+    driver: document.getElementById("driver").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    deliveryNote: document.getElementById("deliveryNote").value,
+    deliveryNote2: document.getElementById("deliveryNote2").value,
+    remarks: document.getElementById("remarks").value,
+    receiverSignature: document.getElementById("receiverSignature").value,
+    officerSignature: document.getElementById("officerSignature").value,
+    goods: tableRows // tableRows already managed in your JS
+  };
+
+  fetch("http://localhost:5000/api/builty", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((resData) => {
+      alert("Form saved on backend!");
+      console.log(resData);
+    })
+    .catch((err) => {
+      alert("Failed to save form!");
+      console.error(err);
+    });
+}
+
+// Builty search
+function searchBuiltys() {
+  const date = document.getElementById("searchDate").value;
+  if (!date) return alert("تاریخ منتخب کریں");
+
+  fetch(`http://localhost:5000/api/builty/${date}`)
+    .then(res => {
+      if (!res.ok) throw new Error("No data found");
+      return res.json();
+    })
+    .then(data => {
+      const resultArea = document.getElementById("searchResults");
+      resultArea.innerHTML = "";
+
+      data.forEach((item, idx) => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <div style="border:1px solid #000; padding:12px; margin-bottom:10px;">
+            <b>بلٹی نمبر:</b> ${item.billNo} |
+            <b>تاریخ:</b> ${item.date} |
+            <b>ڈرائیور:</b> ${item.driver} |
+            <b>وصول کنندہ:</b> ${item.receiver}
+            <br />
+            <button onclick="downloadBuiltyPDF(${idx}, '${item.date}')">📄 PDF ڈاؤن لوڈ کریں</button>
+          </div>
+        `;
+        resultArea.appendChild(div);
+      });
+    })
+    .catch(err => {
+      document.getElementById("searchResults").innerHTML = "کوئی ریکارڈ نہیں ملا";
+      console.error(err);
+    });
+}
 
 
+function downloadBuiltyPDF(index, date) {
+  const url = `http://localhost:5000/api/builty-pdf/${date}/${index}`;
+  window.open(url, "_blank");
+}
+
+
+//Load Buity Function
+
+function loadBuiltysList() {
+  const date = document.getElementById("searchDate").value;
+  if (!date) return alert("تاریخ منتخب کریں");
+
+  fetch(`http://localhost:5000/api/builty/${date}`)
+    .then(res => {
+      if (!res.ok) throw new Error("No data found");
+      return res.json();
+    })
+    .then(data => {
+      const selector = document.getElementById("builtySelector");
+      selector.innerHTML = "<b>اس تاریخ کی بلٹیز:</b><br />";
+
+      data.forEach((item, idx) => {
+        const btn = document.createElement("button");
+        btn.textContent = `بلٹی نمبر: ${item.billNo} (ڈرائیور: ${item.driver})`;
+        btn.className = "download-btn";
+        btn.onclick = () => fillFormWithBuilty(item);
+        selector.appendChild(btn);
+        selector.appendChild(document.createElement("br"));
+      });
+    })
+    .catch(err => {
+      document.getElementById("builtySelector").innerHTML = "کوئی بلٹی نہیں ملی";
+      console.error(err);
+    });
+}
+
+
+//Form Fill Function
+
+function fillFormWithBuilty(data) {
+  document.getElementById("billNo").value = data.billNo || "";
+  document.getElementById("date").value = data.date || "";
+  document.getElementById("invNo").value = data.invNo || "";
+  document.getElementById("from").value = data.from || "";
+  document.getElementById("to").value = data.to || "";
+  document.getElementById("payable").value = data.payable || "";
+  document.getElementById("receiver").value = data.receiver || "";
+  document.getElementById("driver").value = data.driver || "";
+  document.getElementById("phone").value = data.phone || "";
+  document.getElementById("email").value = data.email || "";
+  document.getElementById("deliveryNote").value = data.deliveryNote || "";
+  document.getElementById("deliveryNote2").value = data.deliveryNote2 || "";
+  document.getElementById("remarks").value = data.remarks || "";
+  document.getElementById("receiverSignature").value = data.receiverSignature || "";
+  document.getElementById("officerSignature").value = data.officerSignature || "";
+
+  // Table Rows
+  tableRows = data.goods || [newRowData()];
+  renderTable();
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "billNo": "75",
+    "date": "2025-07-29",
+    "invNo": "JU7398",
+    "from": "Karachi",
+    "to": "Islamabad",
+    "payable": "SLM",
+    "receiver": "Rayyan Bros",
+    "driver": "XYZ",
+    "phone": "03082283035",
+    "email": "ADF54B78",
+    "deliveryNote": "XYZ",
+    "deliveryNote2": "",
+    "remarks": "YES",
+    "receiverSignature": "Abdul Raheem",
+    "officerSignature": "CEO",
+    "goods": [
+      {
+        "qty": "1",
+        "details": "Rasheed Tyre",
+        "weight": "18/19Ton",
+        "totalFare": "300000",
+        "advanceFare": "100000",
+        "balanceFare": "200000",
+        "paidTo": ""
+      }
+    ]
+  },
+  {
+    "billNo": "76",
+    "date": "2025-07-29",
+    "invNo": "SPA 244",
+    "from": "Karachi",
+    "to": "Lahore",
+    "payable": "SLM",
+    "receiver": "Tapal Tea",
+    "driver": "XYZ",
+    "phone": "03082283035",
+    "email": "ADF54B78",
+    "deliveryNote": "XYZ",
+    "deliveryNote2": "",
+    "remarks": "YES",
+    "receiverSignature": "Abdul Raheem",
+    "officerSignature": "CEO",
+    "goods": [
+      {
+        "qty": "1",
+        "details": "Tapal Tea",
+        "weight": "18/19Ton",
+        "totalFare": "300000",
+        "advanceFare": "100000",
+        "balanceFare": "200000",
+        "paidTo": ""
+      }
+    ]
+  },
+  {
+    "billNo": "79",
+    "date": "2025-07-30",
+    "invNo": "JU 5353",
+    "from": "Karachi",
+    "to": "Lahore",
+    "payable": "SLM",
+    "receiver": "Shan Masala",
+    "driver": "XYZ",
+    "phone": "03082283035",
+    "email": "ADF54B78",
+    "deliveryNote": "XYZ",
+    "deliveryNote2": "",
+    "remarks": "YES",
+    "receiverSignature": "Abdul Raheem",
+    "officerSignature": "CEO",
+    "goods": [
+      {
+        "qty": "1",
+        "details": "Shan Masala",
+        "weight": "15Ton",
+        "totalFare": "340000",
+        "advanceFare": "100000",
+        "balanceFare": "240000",
+        "paidTo": ""
+      }
+    ]
+  },
+  {
+    "billNo": "112",
+    "date": "2025-07-30",
+    "invNo": "TLK 532",
+    "from": "karachi",
+    "to": "Faisalabad",
+    "payable": "SLM",
+    "receiver": "Rasheed Tyres",
+    "driver": "",
+    "phone": "03085467212",
+    "email": "",
+    "deliveryNote": "XYZ",
+    "deliveryNote2": "XYZ",
+    "remarks": "YES",
+    "receiverSignature": "Roy",
+    "officerSignature": "CEO",
+    "goods": [
+      {
+        "qty": "1",
+        "details": "Rasheed Tyre",
+        "weight": "18ton",
+        "totalFare": "295000",
+        "advanceFare": "",
+        "balanceFare": "",
+        "paidTo": ""
+      }
+    ]
+  }
+]

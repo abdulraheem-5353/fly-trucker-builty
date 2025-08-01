@@ -1,24 +1,39 @@
 body {
   font-family: "Noto Nastaliq Urdu Draft", Tahoma, Arial, sans-serif;
-  background: #fff;
+  background: linear-gradient(-45deg, #ff512f, #dd2476, #24c6dc, #5433ff);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
   margin: 0;
   padding: 0;
+  transition: background 1s ease-in-out;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .profile-card {
-  background: #fff;
+  background: #000000;
   padding: 24px;
   max-width: 500px;
   margin: 40px auto;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
   text-align: center;
   font-family: "Segoe UI", sans-serif;
 }
 
 .profile-card h2 {
   font-size: 28px;
-  color: #222;
+  color: #f9f8f8;
   margin-bottom: 10px;
 }
 
@@ -37,10 +52,77 @@ body {
   max-width: 1100px;
   height: auto;
   margin: 30px auto;
-  border: 1px solid #333;
   padding: 18px 16px 32px 16px;
   background: #fff;
   direction: rtl;
+  position: relative; /* Required for pseudo-elements */
+  z-index: 1;
+}
+
+/* Add animated borders using pseudo-elements */
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, #000000, #ffffff, #ff4800, #ff0000);
+  background-size: 300% 100%;
+  z-index: -1;
+  border-radius: 8px;
+  animation: borderMove 5s linear infinite;
+}
+
+/* Top and bottom animated borders */
+.container::before {
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.container::after {
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+/* Side borders (optional) */
+.container .side-border {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #ff6a00, #ff0080, #00c3ff, #ff6a00);
+  background-size: 100% 300%;
+  animation: borderMoveVertical 5s linear infinite;
+  z-index: -1;
+}
+
+.container .side-border.left {
+  left: -2px;
+}
+
+.container .side-border.right {
+  right: -2px;
+}
+
+/* Animations */
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes borderMoveVertical {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
 }
 
 .header-flex {
@@ -52,14 +134,6 @@ body {
 .logo-col {
   flex: 1 1 20%;
 }
-/*.logo-div {
-  display: flex;
-  justify-content: flex-end; /* left side 
-  align-items: center;
-  margin-left: 150px;
-  margin-top: 120px;
-  /*padding: 10px 20px; /* optional padding 
-}*/
 
 .logo {
   max-width: 350px;
@@ -281,28 +355,7 @@ body {
   line-height: 1.8;
   padding: 10px;
 }
-/*.footer-fields {
-  display: flex;
-  gap: 16px;
-  font-size: 15px;
-  margin-top: 25px;
-}
 
-.footer-fields label {
-  margin-left: 5px;
-}
-
-.note-block {
-  margin-top: 15px;
-  font-size: 13px;
-}
-
-.note-urdu {
-  color: red;
-  font-weight: bold;
-  font-size: 13px;
-}
-*/
 .footer-div {
   margin-top: 15px;
   border-top: 1px solid #333;
@@ -329,6 +382,11 @@ body {
   font-weight: 600;
   margin: 0;
   letter-spacing: 0.5px;
+}
+
+.buttons-area {
+  justify-content: center;
+  align-items: center;
 }
 
 /*Mobile Responsive Code*/
@@ -460,18 +518,6 @@ body {
     gap: 4px;
   }
 
-  /*.footer-fields {
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 20px;
-  }
-
-  .footer-fields label {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-  }*/
-
   .add-row-btn,
   .download-btn {
     width: 100%;
@@ -530,5 +576,44 @@ body {
 }
 
 .buttons-area {
+  text-align: center;
   margin-top: 20px;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Orange Gradient */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 10px 5px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #ff512f,
+    #dd2476
+  ); /* Reddish Gradient on hover */
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+#searchDate {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin: 10px 5px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+#searchDate:focus {
+  border-color: #ff7e5f;
 }

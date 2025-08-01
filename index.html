@@ -22,10 +22,9 @@
   </div>
 
   <div class="container" id="form-container">
-    <!-- HEADER -->
-    <!--div class="logo-div">
-      <img class="logo-img" src="fly ruckers logo-01.jpg" alt="Fly Logo" />
-    </div-->
+    <div class="side-border left"></div>
+    <div class="side-border right"></div>
+
     <div class="header-flex">
       <div class="logo-col">
         <div class="logo">
@@ -62,21 +61,21 @@
 
       <div class="form-fields">
         <label>
-          بلٹئ نمبر:
+          بلٹی نمبر:
           <input class="form-input" name="billNo" id="billNo" />
         </label>
         <label>تاریخ: <input class="form-input" name="date" id="date" type="date" /></label>
         <label>ٹرک نمبر: <input class="form-input" name="invNo" id="invNo" /></label>
         <label>از: <input class="form-input" name="from" id="from" /></label>
         <label>تا: <input class="form-input" name="from" id="to" /></label>
-        <label>مال بھئجنے والا:
+        <label>مال بھیجنے والا:
           <input class="form-input" name="payable" id="payable" /></label>
         <label>وصول کنندہ:
           <input class="form-input" name="receiver" id="receiver" /></label>
         <label>ڈرائیور کا نام:
           <input class="form-input" name="driver" id="driver" /></label>
         <label>فون نمبر: <input class="form-input" name="phone" id="phone" /></label>
-        <label>کنٹئنر نمبر/سئل نمبر:
+        <label>کنٹینر نمبر/سیل نمبر:
           <input class="form-input" name="email" id="email" /></label>
       </div>
     </div>
@@ -107,11 +106,11 @@
         </div>
         <div>
           <label>
-            نوٹ: خالئ کنٹئنر <input name="deliveryNote" id="deliveryNote2" /></label>
+            نوٹ: خالی کنٹینر <input name="deliveryNote" id="deliveryNote2" /></label>
         </div>
         <div>
           <label>
-            دن کے اندر واپسئ: <input name="remarks" id="remarks" /></label>
+            دن کے اندر واپسی: <input name="remarks" id="remarks" /></label>
           <span>اُترے گا</span>
         </div>
       </div>
@@ -156,8 +155,17 @@
 
   </div>
   <div class="buttons-area">
-    <button class="download-btn" onclick="downloadImage()">ڈاؤن لوڈ</button>
+    <button class="download-btn" onclick="downloadImage()">Download Builty</button>
+    <button class="download-btn" onclick="submitToBackend()">Save To Backend</button><br>
+    <input type="date" id="searchDate" />
+    <button class="download-btn" onclick="searchBuiltys()">Seacrh Builty</button>
   </div>
+
+
+  <div id="searchResults" style="margin-top: 20px;"></div>
+
+
+
   <div class="text-div">
     <h2>Develop By:Abdul Raheem</h2>
   </div>
